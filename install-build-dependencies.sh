@@ -1,5 +1,4 @@
 #!/bin/sh
 
 sudo aptitude install -y \
-    # eiskalt
-    cmake gettext libbz2-dev libssl-dev libboost-dev libdna11-dev
+    cmake gettext libbz2-dev libssl-dev libboost-dev libidn11-dev

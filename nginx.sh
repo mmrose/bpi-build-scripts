@@ -1,5 +1,5 @@
 #!/bin/sh
-VERSION=1.9.0
+VERSION=1.9.8
 
 curl -L http://nginx.org/download/nginx-$VERSION.tar.gz | tar xz -C /tmp
 

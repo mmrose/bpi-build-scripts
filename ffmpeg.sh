@@ -3,7 +3,7 @@
 sudo apt-get -y --force-yes install \
 autoconf automake build-essential libass-dev libfreetype6-dev \
 libtheora-dev libtool libvorbis-dev pkg-config texi2html zlib1g-dev \
-libao-dev libgcrypt11-dev libgnutls-dev libfaad-dev libmad0-dev libjson0-dev
+libao-dev libgcrypt11-dev libfreetype6-dev libfaad-dev libmad0-dev libjson0-dev
 # prepare build folders
 mkdir -p /storage/temp/ffmpeg/sources
 mkdir -p /storage/temp/ffmpeg/build
@@ -49,6 +49,7 @@ make install
 # copy bin (backup old)
 sudo mv /opt/bin/ffmpeg /opt/bin/ffmpeg.old
 sudo mv /opt/bin/ffprobe /opt/bin/ffprobe.old
-sudo cp /storage/temp/ffmpeg/bin/ff{mpeg,probe} /opt/bin
+sudo cp /storage/temp/ffmpeg/bin/ffmpeg  /opt/bin
+sudo cp /storage/temp/ffmpeg/bin/ffprobe /opt/bin
 # cleanup
 #rm -rf /storage/temp/ffmpeg

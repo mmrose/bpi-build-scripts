@@ -17,3 +17,4 @@ scons
 # install
 sudo mv /opt/bin/freelan /opt/bin/freelan.old
 sudo cp /storage/temp/freelan-$VERSION/install/bin/freelan /opt/bin/freelan
+sudo chown root:root /opt/bin/freelan

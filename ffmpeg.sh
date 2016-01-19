@@ -1,6 +1,6 @@
 #!/bin/sh
 # install deps
-sudo apt-get -y --force-yes install \
+sudo aptitude -y install \
 autoconf automake build-essential libass-dev libfreetype6-dev \
 libtheora-dev libtool libvorbis-dev pkg-config texi2html zlib1g-dev \
 libao-dev libgcrypt11-dev libfreetype6-dev libfaad-dev libmad0-dev libjson0-dev
@@ -9,11 +9,11 @@ mkdir -p /storage/temp/ffmpeg/sources
 mkdir -p /storage/temp/ffmpeg/build
 mkdir -p /storage/temp/ffmpeg/bin
 # h264
-sudo apt-get install libx264-dev
+sudo aptitude -y install libx264-dev
 # mp3
-sudo apt-get install libmp3lame-dev
+sudo aptitude -y install libmp3lame-dev
 # webm
-sudo apt-get install libogg-dev libvorbis-dev libvpx-dev
+sudo aptitude -y install libogg-dev libvorbis-dev libvpx-dev
 # compile
 cd /storage/temp/ffmpeg/sources
 
@@ -22,7 +22,7 @@ wget http://www.tortall.net/projects/yasm/releases/yasm-1.3.0.tar.gz
 tar xzvf yasm-1.3.0.tar.gz
 cd yasm-1.3.0
 ./configure --prefix="/storage/temp/ffmpeg/build" --bindir="/storage/temp/ffmpeg/bin"
-make
+make -j 2
 make install
 make distclean
 
@@ -44,7 +44,7 @@ PKG_CONFIG_PATH="/storage/temp/ffmpeg/build/lib/pkgconfig" ./configure \
     --enable-libvpx \
     --enable-libx264 \
     --enable-nonfree
-make
+make -j 2
 make install
 # copy bin (backup old)
 sudo mv /opt/bin/ffmpeg /opt/bin/ffmpeg.old
